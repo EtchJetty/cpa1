@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "watch": "nodemon --ext *"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -11,6 +12,13 @@
     "ejs": "~2.6.1",
     "express": "~4.16.1",
     "http-errors": "~1.6.3",
+    "jquery": "^3.6.0",
     "morgan": "~1.9.1"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "connect-livereload": "^0.6.1",
+    "livereload": "^0.9.3",
+    "nodemon": "^2.0.16"
   }
 }
