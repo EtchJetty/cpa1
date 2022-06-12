@@ -2,32 +2,206 @@
 <html>
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>
     <%= title %>
   </title>
-  <link rel='stylesheet' href='/css/bootstrap.min.css' />
+  <link rel='stylesheet' href='/css/scss.css' />
+  <link rel='stylesheet' href='/css/style.css' />
+  <style>
+    th {
+      display: none;
+    }
+
+    .table-dark {
+      background-color: #402610 !important;
+    }
+  </style>
+  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcowewe to <%= title %>
-  </p>
-<p>
-  <a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-    Link with href
-  </a>
-  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-    Button with data-bs-target
-  </button>
-</p>
-<div class="collapse" id="collapseExample">
-  <div class="card card-body">
-    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  <div class="container mh-100">
+
+    <div class="row justify-content-center">
+      <div class="p-3 pb-1 col-9">
+        <h1>
+          <%= title %> - Viridia Weiss
+        </h1>
+      </div>
+    </div>
+    <div class="row col-lg-8 offset-lg-2">
+      <div class="col-4">
+        <img src="https://file.garden/X8UcPOa95myVypAH/cosi/cs152a/images/viriCA1.png" class="img img-fluid rounded">
+      </div>
+      <div class="col-6">
+        <p>Howdy! I'm Viridia, and I've made a couple cool projects in the past:</p>
+        <ul>
+          <li>
+            an <a class="link-secondary text-decoration-none" href="http://erijancentral.com/">interactive website
+              <i class="bi bi-box-arrow-up-right"></i></a> for a comic I like,
+          </li>
+          <li>
+            an <a class="link-secondary text-decoration-none"
+              href="https://etchjetty.github.io/bootstrap-tomato/">unofficial Bootstrap redesign <i
+                class="bi bi-box-arrow-up-right"></i></a> of a neat tool I used to like, but got bought out,
+          </li>
+          <ul>
+            <li>and whatever else you find <a class="link-primary text-decoration-none"
+                href="https://etchjetty.github.io/">here! <i class="bi bi-box-arrow-up-right"></i></a></li>
+          </ul>
+        </ul>
+        <p>Below, you'll find a table.</p>
+      </div>
+    </div>
+
+    <div class="row mw-100 p-3 pb-2">
+      <div class="col-lg-8 offset-lg-2">
+        <table class="table table-borderless text-center">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">1</th>
+              <th scope="col">2</th>
+              <th scope="col">3</th>
+              <th scope="col">4</th>
+              <th scope="col">5</th>
+              <th scope="col">6</th>
+              <th scope="col">7</th>
+              <th scope="col">8</th>
+              <th scope="col">9</th>
+              <th scope="col">H</th>
+              <th scope="col">Z</th>
+              <th scope="col">V</th>
+            </tr>
+          </thead>
+          <tbody class="fs-1">
+            <tr>
+              <th scope="row">1</th>
+              <td>🕔</td>
+              <td></td>
+              <td colspan="3"></td>
+              <td colspan="4" class="border border-dark border-4 fs-6 font-monospace align-middle">Nice table, huh?
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td colspan="8"></td>
+              <td><i class="bi bi-arrow-return-right"></i>
+              </td>
+              <td>😄</td>
+              <td></td>
+              <td colspan="1" class="table-dark"></td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td colspan="2">
+              </td>
+              <td>💻</td>
+              <td>📚</td>
+              <td colspan="2"></td>
+              <td>🥤
+              </td>
+              <td>🌭
+              </td>
+              <td>💪</td>
+              <td>👔</td>
+              <td>🤳</td>
+              <td colspan="1" class="table-dark"></td>
+            </tr>
+            <tr>
+              <th scope="row">4</th>
+              <td colspan="8" class="table-dark"></td>
+              <td></td>
+              <td>👖</td>
+              <td></td>
+              <td colspan="1" class="table-dark"></td>
+            </tr>
+            <tr>
+              <th scope="row">5</th>
+              <td colspan="1"></td>
+              <td colspan="1" class="table-dark"></td>
+              <td colspan="3"></td>
+              <td colspan="1" class="table-dark"></td>
+              <td colspan="3"></td>
+              <td>👞</td>
+              <td>👞</td>
+              <td colspan="1" class="table-dark"></td>
+            </tr>
+            <tr>
+              <th scope="row">6</th>
+              <td colspan="1"></td>
+              <td colspan="1" class="table-dark"></td>
+              <td colspan="3"></td>
+              <td colspan="1" class="table-dark"></td>
+              <td colspan="3"></td>
+              <td colspan="3" class="table-dark"></td>
+            </tr>
+            <tr>
+              <th scope="row">7</th>
+              <td colspan="1"></td>
+              <td colspan="1" class="table-dark"></td>
+              <td colspan="2"></td>
+              <td>🗑️</td>
+              <td colspan="1" class="table-dark"></td>
+              <td colspan="3"></td>
+              <td colspan="1" class="table-dark"></td>
+              <td colspan="1"></td>
+              <td colspan="1" class="table-dark"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-</div>
-<script type="module" src="js/bootstrap.bundle.js"></script>
+  <div class="container">
+    <div class="row mw-100 p-3 pb-2">
+      <div class="col-md-8 offset-md-1">
+        <div class="accordion" id="assignmentAccordion">
+          <div class="accordion-item  text-bg-secondary">
+            <div class="accordion-header h1" id="assignmentHeader"> <button
+                class="accordion-button text-bg-dark collapsed " type="button" data-bs-toggle="collapse"
+                data-bs-target="#assignmentText" aria-expanded="false" aria-controls="assignmentText">
+                CPA1 detail
+              </button></div>
+            <div id="assignmentText" class="mt-0 accordion-collapse collapse" aria-labelledby="assignmentHeader"
+              data-bs-parent="#assignmentAccordion">
+              <div class="accordion-body font-monospace h6 small pre-wrap">For this assignment you
+                should create an
+                express
+                app
+                which displays an
+                "About the
+                Developer" page.<br>
+                The page should contain<br>
+                * an image of your (or something you like)<br>
+                * an h1 header with your name<br>
+                * a list of interesting things about you<br>
+                * a table <br>
+                * use of bootstrap style to set colors, font sizes, margins/paddings, etc.<br>
+                <br>
+                Once you have completed this, create a short Zoom recording in the cloud (2-3 minutes)<br>
+                where you show yourself starting the app in the terminal or powershell with nodemon or npm start<br>
+                and then viewing it in the browser. Then open VScode or some other editor and explain how your code
+                works
+                (briefly).<br>
+                <br>
+                Cut and paste a link to your movie in the space below along with a short reflection where you
+                explain<br>
+                * what you learned, if anything, doing this assignment<br>
+                * what challenges you encountered, if any<br>
+                * how long it took you to complete this assignment.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="js/bootstrap.bundle.js"></script>
+  <script>twemoji.parse(document.body);</script>
 </body>
 
 </html>

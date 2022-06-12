@@ -18,9 +18,11 @@ liveReloadServer.server.once("connection", () => {
 
 var app = express();
 app.use(connectLiveReload());
-app.use("/css", express.static(path.join(__dirname, "node_modules/bootstrap/dist/css")));
+app.use("/css", express.static(path.join(__dirname, "build")));
 app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
 app.use("/js", express.static(path.join(__dirname, "node_modules/jquery/dist")));
+app.use("/css", express.static(path.join(__dirname, "public/stylesheets/")));
+app.use("/css/fonts", express.static(path.join(__dirname, "node_modules/bootstrap-icons/font/fonts/")));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));

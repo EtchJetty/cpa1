@@ -1,8 +1,6 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+img.emoji {
+   height: 1em;
+   width: 1em;
+   margin: 0 .05em 0 .1em;
+   vertical-align: -0.1em;
 }
