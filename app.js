@@ -18,11 +18,11 @@ liveReloadServer.server.once("connection", () => {
 
 var app = express();
 app.use(connectLiveReload());
-app.use("/css", express.static(path.join(__dirname, "build")));
-app.use("/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
-app.use("/js", express.static(path.join(__dirname, "node_modules/jquery/dist")));
-app.use("/css", express.static(path.join(__dirname, "public/stylesheets/")));
-app.use("/css/fonts", express.static(path.join(__dirname, "node_modules/bootstrap-icons/font/fonts/")));
+app.use("/static/css", express.static(path.join(__dirname, "build")));
+app.use("/static/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
+app.use("/static/js", express.static(path.join(__dirname, "node_modules/jquery/dist")));
+app.use("/static/css", express.static(path.join(__dirname, "public/stylesheets/")));
+app.use("/static/css/fonts", express.static(path.join(__dirname, "node_modules/bootstrap-icons/font/fonts/")));
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -52,5 +52,15 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+// var pages = require("node-github-pages")(app, {
+//   static: "public", // Static directory path(css, js...)
+//   path: "docs" // Output path
+// });
+// pages.renderFiles([{
+//   "view": "index",
+//   "url": "",
+//   "options": { title: "Express" }
+// }]);
 
 module.exports = app;
