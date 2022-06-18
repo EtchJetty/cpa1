@@ -9,6 +9,7 @@
     "watch": "npm-run-all --parallel sass nodemon"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "bootstrap-icons": "^1.8.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "bootstrap": "^5.2.0-beta1",
     "connect-livereload": "^0.6.1",
+    "express-ejs-layouts": "^2.5.1",
     "livereload": "^0.9.3",
     "nodemon": "^2.0.16"
   }

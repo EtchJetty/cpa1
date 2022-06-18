@@ -1,30 +1,5 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/static/css/scss.css' />
-  <link rel='stylesheet' href='/static/css/style.css' />
-  <style>
-    th {
-      display: none;
-    }
-
-    .table-dark {
-      background-color: #402610 !important;
-    }
-  </style>
-  <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
   <div class="container mh-100">
-
     <div class="row justify-content-center">
       <div class="p-3 pb-1 col-9">
         <h1>
@@ -37,23 +12,24 @@
         <img src="https://file.garden/X8UcPOa95myVypAH/cosi/cs152a/images/viriCA1.png" class="img img-fluid rounded">
       </div>
       <div class="col-6">
-        <p>Howdy! I'm Viridia, and I've made a couple cool projects in the past:</p>
-        <ul>
-          <li>
-            an <a class="link-secondary text-decoration-none" href="http://erijancentral.com/">interactive website
-              <i class="bi bi-box-arrow-up-right"></i></a> for a comic I like,
-          </li>
-          <li>
-            an <a class="link-secondary text-decoration-none"
-              href="https://etchjetty.github.io/bootstrap-tomato/">unofficial Bootstrap redesign <i
-                class="bi bi-box-arrow-up-right"></i></a> of a neat tool I used to like, but got bought out,
-          </li>
+        <%= route %>
+          <p>Howdy! I'm Viridia, and I've made a couple cool projects in the past:</p>
           <ul>
-            <li>and whatever else you find <a class="link-primary text-decoration-none"
-                href="https://etchjetty.github.io/">here! <i class="bi bi-box-arrow-up-right"></i></a></li>
+            <li>
+              an <a class="link-secondary text-decoration-none" href="http://erijancentral.com/">interactive website
+                <i class="bi bi-box-arrow-up-right"></i></a> for a comic I like,
+            </li>
+            <li>
+              an <a class="link-secondary text-decoration-none"
+                href="https://etchjetty.github.io/bootstrap-tomato/">unofficial Bootstrap redesign <i
+                  class="bi bi-box-arrow-up-right"></i></a> of a neat tool I used to like, but got bought out,
+            </li>
+            <ul>
+              <li>and whatever else you find <a class="link-primary text-decoration-none"
+                  href="https://etchjetty.github.io/">here! <i class="bi bi-box-arrow-up-right"></i></a></li>
+            </ul>
           </ul>
-        </ul>
-        <p>Below, you'll find a table.</p>
+          <p>Below, you'll find a table.</p>
       </div>
     </div>
 
@@ -200,8 +176,3 @@
       </div>
     </div>
   </div>
-  <script type="module" src="/static/js/bootstrap.bundle.js"></script>
-  <script>twemoji.parse(document.body);</script>
-</body>
-
-</html>

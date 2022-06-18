@@ -1,6 +1,15 @@
 {
     "configurations": [
 {
+    "name": "Attach by Process ID",
+    "processId": "${command:PickProcess}",
+    "request": "attach",
+    "skipFiles": [
+        "<node_internals>/**"
+    ],
+    "type": "node"
+},
+{
     "command": "npm run watch",
     "name": "Run npm start",
     "request": "launch",

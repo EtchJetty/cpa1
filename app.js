@@ -5,6 +5,9 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
+const layouts = require("express-ejs-layouts");
+const axios = require('axios')
+
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -34,8 +37,10 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
+app.use(layouts)
+app.use('/', indexRouter);
+app.use('/users', usersRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -52,6 +57,12 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
+app.get('/bmi',
+  (req, res, next) => {
+    res.render('bmi')
+  }
+)
 
 // var pages = require("node-github-pages")(app, {
 //   static: "public", // Static directory path(css, js...)
