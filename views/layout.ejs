@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>
+        Classpect Profiles App
+    </title>
+    <link rel='stylesheet' href='/static/css/scss.css' />
+    <link rel='stylesheet' href='/static/css/style.css' />
+    <style>
+        th {
+            display: none;
+        }
+
+        .table-dark {
+            background-color: #402610 !important;
+        }
+    </style>
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="container">
+<% include nav %>
+    <%- body %>
+        <script type="module" src="/static/js/bootstrap.bundle.js"></script>
+        <script>twemoji.parse(document.body);</script>
+
+</body>
+
+</html>
