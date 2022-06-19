@@ -6,11 +6,34 @@ var logger = require("morgan");
 var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
 const layouts = require("express-ejs-layouts");
-const axios = require('axios')
+const axios = require("axios");
+
+
+// *********************************************************** //
+//  Loading models
+// *********************************************************** //
+
+const Course = require('./models/User')
+
+// *********************************************************** //
+//  Connecting to the database
+// *********************************************************** //
+
+const mongoose = require( 'mongoose' );
+//const mongodb_URI = 'mongodb://localhost:27017/cs103a_todo'
+const mongodb_URI = 'mongodb+srv://vweiss:TaylorVarga1337@cluster0.pys6a5t.mongodb.net/test?retryWrites=true&w=majority'
+
+mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
+// fix deprecation warnings
+//mongoose.set('useFindAndModify', false); 
+//mongoose.set('useCreateIndex', true);
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {console.log("we are connected!!!")});
 
 
 var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
 
 const liveReloadServer = livereload.createServer();
 liveReloadServer.server.once("connection", () => {
@@ -37,10 +60,18 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(layouts)
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use(layouts);
+app.use("/", indexRouter);
 
+app.get("/githubInfo/:githubId", async (req, res, next) => {
+  const id = req.params.githubId;
+  const response = await axios.get("https://api.github.com/users/" + id + "/repos");
+  console.dir(response.data.length);
+  res.locals.repos = response.data;
+  res.render("cspectTest",{
+    route: req.route.path});
+  //res.json(response.data.slice(100,105));
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -55,14 +86,10 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render("error");
+  res.render("error", {
+    route: req.route.path,
+  });
 });
-
-app.get('/bmi',
-  (req, res, next) => {
-    res.render('bmi')
-  }
-)
 
 // var pages = require("node-github-pages")(app, {
 //   static: "public", // Static directory path(css, js...)

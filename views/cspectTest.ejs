@@ -1,0 +1,10 @@
+<div class="container mh-100">
+  <div class="mt-2 col-md-6">
+    <div class="h-100 px-5 py-4 bg-light border rounded-3">
+      <h2>Classpect of the Day</h2>
+      <p class="mb-2">Today's Classpect of the Day is the <strong><%= cotd.todayscspect.class.name  %> of <img src="http://erijancentral.com/static/images/<%= cotd.todayscspect.aspect.name %>.png" style="height: 24px; position: relative;" class="img-fluid"> <%= cotd.todayscspect.aspect.name %>.</strong> <br>Wanna learn more? Search for the classpect on ERIJAN CENTRAL!</p><a class="btn btn-outline-secondary" href="http://erijancentral.com/classpects/search?c=<%= cotd.todayscspect.class.name %>&a=<%= cotd.todayscspect.aspect.name %>" role="button">Search <i class="bi bi-box-arrow-up-right"></i></a>
+    </div>
+  </div>
+  <br>
+  <pre><%= JSON.stringify(cotd,null,5) %> </pre>
+</div>
