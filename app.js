@@ -13,7 +13,7 @@ const responsiveImages = require('express-responsive-images');
 //  Loading models
 // *********************************************************** //
 
-const Course = require('./models/User')
+const User = require('./models/User')
 
 // *********************************************************** //
 //  Connecting to the database
