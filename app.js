@@ -7,7 +7,7 @@ var livereload = require("livereload");
 var connectLiveReload = require("connect-livereload");
 const layouts = require("express-ejs-layouts");
 const axios = require("axios");
-
+const responsiveImages = require('express-responsive-images');
 
 // *********************************************************** //
 //  Loading models
@@ -43,7 +43,20 @@ liveReloadServer.server.once("connection", () => {
 });
 
 var app = express();
+
 app.use(connectLiveReload());
+
+// use it before declaring static routes
+app.use(responsiveImages({
+    // options
+    staticDir: '/public',
+    watchedDirectories: ['/images', '/media'], // inside staticDir
+    // ...
+}));
+
+// static routes, something like this:
+app.use('/', express.static(path.join(__dirname, 'public')));
+
 app.use("/static/css", express.static(path.join(__dirname, "build")));
 app.use("/static/js", express.static(path.join(__dirname, "node_modules/bootstrap/dist/js")));
 app.use("/static/js", express.static(path.join(__dirname, "node_modules/jquery/dist")));

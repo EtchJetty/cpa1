@@ -13,10 +13,9 @@ $accordion-button-active-color: white;
 // 4. Include any default map overrides here
 $theme-colors: map-remove($theme-colors, "primary");
 $custom-colors: (
-  "primary": $indigo
+  "primary": $indigo,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
-
 
 // 5. Include remainder of required parts
 @import "../node_modules/bootstrap/scss/maps";
@@ -37,6 +36,26 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // @import "../node_modules/bootstrap/scss/functions";
 // @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "shadow": (
+      property: box-shadow,
+      class: shadow,
+      values: (
+        null: $box-shadow,
+        sm: $box-shadow-sm,
+        lg: $box-shadow-lg,
+        inset-md: inset $box-shadow,
+        inset-sm: inset $box-shadow-sm,
+        inset-lg: inset $box-shadow-lg,
+        inset: inset 0 .3rem 0.5rem rgba($black, .15),
+        none: none,
+      ),
+    ),
+  )
+);
 
 // Layout & components
 @import "../node_modules/bootstrap/scss/reboot";
@@ -73,12 +92,25 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 // Helpers
 @import "../node_modules/bootstrap/scss/helpers";
 
-// Utilities
-@import "../node_modules/bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
 
 // 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
 @import "../node_modules/bootstrap/scss/utilities/api";
+
+// $utilities: map-merge(
+//   $utilities,
+//   (
+//     "shadow": map-merge(
+//       map-get($utilities, "shadow"),
+//       (
+//         values: map-merge(
+//           map-get(map-get($utilities, "shadow"), "values"),
+//           (inset: $box-shadow-inset,),
+//         ),
+//       ),
+//     ),
+//   )
+// );
 
 // 8. Add additional custom code here
 $bootstrap-icons-font-src: url("fonts/bootstrap-icons.woff2") format("woff2"), url("fonts/bootstrap-icons.woff") format("woff");

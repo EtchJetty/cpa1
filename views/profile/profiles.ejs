@@ -12,14 +12,14 @@
     <% for (var user in users) { %>
 
     <div class="d-flex text-muted pt-3 position-relative">
-      <a class="text-decoration-none" href="profile/<%= users[user]._id %>"> <% if (users[user].classpect.aspect) { %> 
- <img src="http://erijancentral.com/static/images/<%= users[user].classpect.aspect %>.png" style="height: 32px; position: relative;" class="img-fluid bd-placeholder-img flex-shrink-0 me-2 rounded">
+      <a class="text-decoration-none" href="/profile/<%= users[user]._id %>"> <% if (users[user].classpect.aspect) { %> 
+ <img src="/images/<%= users[user].classpect.aspect %>.png" style="height: 32px; position: relative;" class="img-fluid bd-placeholder-img flex-shrink-0 me-2 rounded">
 <% } else { %>
     <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
 <% } %></a>
       <p class="pb-3 mb-0 small lh-sm border-bottom">
-        <a class="link-dark text-decoration-none" href="profile/<%= users[user]._id %>"> <strong class="d-block text-gray-dark">@<%= users[user].name %></strong></a>
-        <a class="link-secondary text-decoration-none" href="profile/<%= users[user]._id %>"> <%= users[user].description %> </a>
+        <a class="link-dark text-decoration-none" href="/profile/<%= users[user]._id %>"> <strong class="d-block text-gray-dark">@<%= users[user].name %></strong></a>
+        <a class="link-secondary text-decoration-none" href="/profile/<%= users[user]._id %>"> <%= users[user].description %> </a>
       </p>
     </div>
     <% } %>
