@@ -6,12 +6,16 @@ router.use("/profile", usersRouter);
 
 /* GET home page. */
 router.get("/", async (req, res, next) => {
-  const response = await axios.get("https://aeich.pythonanywhere.com/api/v1/classpects/cotd");
-  res.locals.cotd = response.data;
-  res.locals.debugMode = true;
-  res.render("index", {
-    route: req.route.path
-  });
+  try {
+    const response = await axios.get("https://www.erijancentral.com/api/v1/classpects/cotd");
+    res.locals.cotd = response.data;
+    res.locals.debugMode = true;
+    res.render("index", {
+      route: req.route.path,
+    });
+  } catch (err) {
+    next(err);
+  }
 });
 
 router.get("/bio", (req, res, next) => {

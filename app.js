@@ -23,7 +23,7 @@ const mongoose = require( 'mongoose' );
 //const mongodb_URI = 'mongodb://localhost:27017/cs103a_todo'
 const mongodb_URI = 'mongodb+srv://vweiss:TaylorVarga1337@cluster0.pys6a5t.mongodb.net/test?retryWrites=true&w=majority'
 
-mongoose.connect( mongodb_URI, { useNewUrlParser: true, useUnifiedTopology: true } );
+mongoose.connect( mongodb_URI,  {useNewUrlParser: true, useUnifiedTopology: true, family: 4});
 // fix deprecation warnings
 //mongoose.set('useFindAndModify', false); 
 //mongoose.set('useCreateIndex', true);
