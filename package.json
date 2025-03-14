@@ -9,7 +9,7 @@
     "watch": "npm-run-all --parallel sass nodemon"
   },
   "dependencies": {
-    "axios": "^0.27.2",
+    "axios": "^1.8.2",
     "bootstrap-icons": "^1.8.3",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
